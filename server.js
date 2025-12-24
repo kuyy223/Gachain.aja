@@ -36,7 +36,7 @@ Pembayaran: ${payment}
                 "Authorization": process.env.FONNTE_TOKEN
             },
             body: new URLSearchParams({
-                target: "628XXXXXXXXX", // GANTI NOMOR KAMU
+                target: "6283142808857", // GANTI NOMOR KAMU
                 message
             })
         });
