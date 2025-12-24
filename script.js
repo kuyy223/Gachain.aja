@@ -144,7 +144,7 @@ function kirimPesanan() {
         return;
     }
 
-    fetch("fonnte-backend-production.up.railway.app/send.php", {
+    fetch("https://gachainaja-production.up.railway.app/send", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
