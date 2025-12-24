@@ -61,3 +61,7 @@ Pembayaran: ${payment}
 app.listen(process.env.PORT || 3000, () => {
   console.log("Server berjalan");
 });
+
+app.get("/", (req, res) => {
+  res.send("Backend berjalan 🚀");
+});
