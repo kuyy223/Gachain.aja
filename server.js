@@ -31,7 +31,7 @@ Pembayaran: ${payment}
   `;
 
   try {
-    const response = await fetch("https://api.fonnte.com/send", {
+    const response = await fetch("https://gachainaja-production.up.railway.app/send", {
       method: "POST",
       headers: {
         Authorization: process.env.FONNTE_TOKEN,
