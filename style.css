@@ -1,16 +1,27 @@
 body {
-  font-family: Arial, sans-serif;
-  background: #f4f4f4;
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+.header {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+}
+
+.header h1 {
   margin: 0;
 }
 
-header {
-  background: #111;
-  color: white;
-  text-align: center;
-  padding: 15px;
+.header p {
+  margin-top: 5px;
+  font-size: 14px;
+  opacity: 0.9;
 }
 
+/* SLIDER */
 .slider {
   position: relative;
   height: 180px;
@@ -23,39 +34,88 @@ header {
   object-fit: cover;
   position: absolute;
   opacity: 0;
-  transition: opacity 1s;
+  transition: opacity 1s ease;
 }
 
 .slider img.active {
   opacity: 1;
 }
 
-.form {
-  padding: 15px;
-  background: white;
+/* CARD */
+.card {
+  background: #020617;
+  margin: -30px 15px 20px;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.card h2 {
+  margin-top: 0;
+  text-align: center;
 }
 
 label {
+  margin-top: 12px;
   display: block;
+  font-size: 14px;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: #020617;
+  color: white;
+  border: 1px solid #1e293b;
+}
+
+/* PAKET */
+.paket-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
   margin-top: 10px;
 }
 
-input, select, button {
+.paket-grid label {
+  background: #020617;
+  border: 1px solid #1e293b;
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.paket-grid input {
+  display: none;
+}
+
+.paket-grid input:checked + span {
+  color: #22c55e;
+  font-weight: bold;
+}
+
+.hint {
+  grid-column: span 2;
+  text-align: center;
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+/* BUTTON */
+.btn-order {
   width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-}
-
-button {
-  background: #25D366;
-  color: white;
+  margin-top: 20px;
+  padding: 14px;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
   border: none;
+  border-radius: 12px;
   font-size: 16px;
-  margin-top: 15px;
-}
-
-.paket label {
-  display: block;
-  margin-top: 5px;
+  font-weight: bold;
+  color: #020617;
 }
 
