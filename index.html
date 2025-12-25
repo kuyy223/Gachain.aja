@@ -1,69 +1,53 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <title>TopUpInAja</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gachain.Aja - Top Up Game</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
 <header>
-    <h1>TopUpInAja</h1>
-    <p>Top Up Game Cepat & Aman</p>
+  <h1>Gachain.Aja</h1>
+  <p>Top Up Game Murah & Cepat</p>
 </header>
 
-<!-- SLIDER BANNER -->
-<section class="slider">
-    <img id="sliderImage" src="img/ff1.jpg" alt="Banner Game">
-</section>
+<!-- SLIDER -->
+<div class="slider">
+  <img src="img/banner1.jpg" class="active">
+  <img src="img/banner2.jpg">
+  <img src="img/banner3.jpg">
+</div>
 
+<!-- FORM -->
+<section class="form">
+  <label>Pilih Game</label>
+  <select id="game">
+    <option value="">-- Pilih Game --</option>
+    <option value="Free Fire">Free Fire</option>
+    <option value="Mobile Legends">Mobile Legends</option>
+    <option value="PUBG Mobile">PUBG Mobile</option>
+    <option value="Roblox">Roblox</option>
+  </select>
 
-<section class="form-section">
-    <label>ID Game</label>
-    <input id="gameId" placeholder="Masukkan ID Game">
+  <label>User ID</label>
+  <input type="text" id="userid" placeholder="Masukkan ID">
 
-    <div id="serverBox">
-        <label>Server</label>
-        <input id="server" placeholder="Opsional">
-    </div>
+  <label>Server / Display Name</label>
+  <input type="text" id="server" placeholder="Server (Roblox: Display Name)">
 
-    <div id="displayNameBox" style="display:none">
-        <label>Display Name Roblox</label>
-        <input id="displayName">
-    </div>
+  <label>Pilih Paket</label>
+  <div class="paket">
+    <label><input type="radio" name="paket" value="80 Diamond / Robux"> 80</label>
+    <label><input type="radio" name="paket" value="500 Diamond / Robux"> 500</label>
+    <label><input type="radio" name="paket" value="1000 Diamond / Robux"> 1000</label>
+  </div>
 
-    <label>Pilih Game</label>
-    <select id="game"></select>
-
-    <label>Metode Pembayaran</label>
-    <select id="payment">
-        <option>DANA</option>
-        <option>OVO</option>
-        <option>GOPAY</option>
-        <option>QRIS</option>
-        <option>Transfer Bank</option>
-    </select>
-</section>
-
-<section class="game">
-    <table>
-        <thead>
-            <tr>
-                <th>Nominal</th>
-                <th>Harga</th>
-                <th>Pilih</th>
-            </tr>
-        </thead>
-        <tbody id="nominalBody"></tbody>
-    </table>
-
-    <!-- TOMBOL PESAN -->
-    <button class="order-btn" onclick="kirimPesanan()">
-        📩 Pesan Sekarang
-    </button>
+  <button onclick="pesanSekarang()">Pesan Sekarang</button>
 </section>
 
 <script src="script.js"></script>
 </body>
 </html>
+
