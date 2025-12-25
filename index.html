@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gachain.Aja - Top Up Game</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
+<header class="header">
   <h1>Gachain.Aja</h1>
-  <p>Top Up Game Murah & Cepat</p>
+  <p>Top Up Game Murah • Cepat • Aman</p>
 </header>
 
 <!-- SLIDER -->
@@ -20,8 +20,10 @@
   <img src="img/banner3.jpg">
 </div>
 
-<!-- FORM -->
-<section class="form">
+<!-- CARD FORM -->
+<div class="card">
+  <h2>Form Top Up</h2>
+
   <label>Pilih Game</label>
   <select id="game">
     <option value="">-- Pilih Game --</option>
@@ -32,20 +34,20 @@
   </select>
 
   <label>User ID</label>
-  <input type="text" id="userid" placeholder="Masukkan ID">
+  <input type="text" id="userid" placeholder="Masukkan User ID">
 
   <label>Server / Display Name</label>
   <input type="text" id="server" placeholder="Server (Roblox: Display Name)">
 
   <label>Pilih Paket</label>
-  <div class="paket">
-    <label><input type="radio" name="paket" value="80 Diamond / Robux"> 80</label>
-    <label><input type="radio" name="paket" value="500 Diamond / Robux"> 500</label>
-    <label><input type="radio" name="paket" value="1000 Diamond / Robux"> 1000</label>
+  <div class="paket-grid" id="paketContainer">
+    <p class="hint">Pilih game terlebih dahulu</p>
   </div>
 
-  <button onclick="pesanSekarang()">Pesan Sekarang</button>
-</section>
+  <button class="btn-order" onclick="pesanSekarang()">
+    Pesan via WhatsApp
+  </button>
+</div>
 
 <script src="script.js"></script>
 </body>
