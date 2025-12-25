@@ -7,9 +7,12 @@ body {
 
 .header {
   text-align: center;
-  padding: 20px;
+  padding: 16px;
   background: linear-gradient(135deg, #1e3a8a, #2563eb);
+  position: relative;
+  z-index: 3;
 }
+
 
 .header h1 {
   margin: 0;
@@ -24,15 +27,19 @@ body {
 /* SLIDER */
 .slider {
   position: relative;
-  height: 180px;
+  width: 100%;
+  height: 160px; /* BATASI TINGGI */
   overflow: hidden;
+  z-index: 1;
 }
 
 .slider img {
   width: 100%;
-  height: 180px;
+  height: 160px;
   object-fit: cover;
   position: absolute;
+  top: 0;
+  left: 0;
   opacity: 0;
   transition: opacity 1s ease;
 }
@@ -41,14 +48,17 @@ body {
   opacity: 1;
 }
 
-/* CARD */
+
 .card {
   background: #020617;
-  margin: -30px 15px 20px;
+  margin: 15px; /* HAPUS MARGIN NEGATIF */
   padding: 20px;
   border-radius: 14px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  position: relative;
+  z-index: 2;
 }
+
 
 .card h2 {
   margin-top: 0;
