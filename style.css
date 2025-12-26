@@ -24,6 +24,17 @@ body {
   opacity: 0.9;
 }
 
+@media (max-width: 480px) {
+  .slider, .slider img {
+    height: 150px;
+  }
+
+  .slider-overlay h2 {
+    font-size: 16px;
+  }
+}
+
+
 .slider {
   position: relative;
   width: 100%;
