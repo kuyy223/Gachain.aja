@@ -1,31 +1,35 @@
 const paketGame = {
-  "Free Fire": ["70 Diamond", "140 Diamond", "355 Diamond", "720 Diamond"],
-  "Mobile Legends": ["86 Diamond", "172 Diamond", "257 Diamond", "514 Diamond"],
-  "PUBG Mobile": ["60 UC", "180 UC", "325 UC", "660 UC"],
-  "Roblox": ["80 Robux", "400 Robux", "800 Robux", "1700 Robux"]
+  "Free Fire": [
+    { nama: "70 Diamond", harga: 10000 },
+    { nama: "140 Diamond", harga: 19000 },
+    { nama: "355 Diamond", harga: 48000 }
+  ],
+  "Mobile Legend": [
+    { nama: "86 Diamond", harga: 20000 },
+    { nama: "172 Diamond", harga: 38000 }
+  ],
+  "PUBG": [
+    { nama: "60 UC", harga: 15000 },
+    { nama: "325 UC", harga: 75000 }
+  ],
+  "Roblox": [
+    { nama: "80 Robux", harga: 18000 },
+    { nama: "500 Robux", harga: 90000 }
+  ]
 };
 
-const gameSelect = document.getElementById("game");
-const paketContainer = document.getElementById("paketContainer");
+document.getElementById("game").addEventListener("change", function () {
+  const paketSelect = document.getElementById("nominal");
+  paketSelect.innerHTML = "";
 
-gameSelect.addEventListener("change", () => {
-  const game = gameSelect.value;
-  paketContainer.innerHTML = "";
-
-  if (!paketGame[game]) {
-    paketContainer.innerHTML = `<p class="hint">Pilih game terlebih dahulu</p>`;
-    return;
-  }
-
-  paketGame[game].forEach(paket => {
-    paketContainer.innerHTML += `
-      <label>
-        <input type="radio" name="paket" value="${paket}">
-        <span>${paket}</span>
-      </label>
-    `;
+  paketGame[this.value]?.forEach(p => {
+    const opt = document.createElement("option");
+    opt.value = p.nama + " - Rp " + p.harga;
+    opt.textContent = p.nama + " (Rp " + p.harga.toLocaleString() + ")";
+    paketSelect.appendChild(opt);
   });
 });
+
 
 function pesanSekarang() {
   const game = gameSelect.value;
@@ -50,7 +54,7 @@ Saya ingin top up:
 Terima kasih 🙏
 `;
 
-  const nomorAdmin = "628XXXXXXXXXX"; // GANTI
+  const nomorAdmin = "6283142808857"; // GANTI
   window.open(`https://wa.me/${nomorAdmin}?text=${encodeURIComponent(pesan)}`, "_blank");
 }
 
