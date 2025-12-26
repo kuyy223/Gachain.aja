@@ -69,19 +69,18 @@ body {
 
 .card {
   background: #020617;
-  margin: 15px; /* HAPUS MARGIN NEGATIF */
+  margin: 16px;
   padding: 20px;
-  border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-  position: relative;
-  z-index: 2;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0,0,0,.5);
 }
 
-
-.card h2 {
-  margin-top: 0;
+.card h3 {
   text-align: center;
+  margin-bottom: 15px;
+  color: #38bdf8;
 }
+
 
 label {
   margin-top: 12px;
