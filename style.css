@@ -134,15 +134,15 @@ input, select {
 }
 
 /* BUTTON */
-.btn-order {
+.btn-wa {
   width: 100%;
-  margin-top: 20px;
   padding: 14px;
-  background: linear-gradient(135deg, #22c55e, #16a34a);
-  border: none;
   border-radius: 12px;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: white;
   font-size: 16px;
   font-weight: bold;
-  color: #020617;
+  border: none;
 }
+
 
