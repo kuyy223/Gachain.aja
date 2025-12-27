@@ -33,9 +33,11 @@ document.getElementById("game").addEventListener("change", function () {
   const paket = document.getElementById("nominal");
   paket.innerHTML = "";
 
-  paketGame[this.value]?.forEach(p => {
+  if (!paketGame[this.value]) return;
+
+  paketGame[this.value].forEach(p => {
     let opt = document.createElement("option");
-    opt.value = p.nama + " - Rp " + p.harga;
+    opt.value = `${p.nama} - Rp ${p.harga}`;
     opt.textContent = `${p.nama} (Rp ${p.harga.toLocaleString()})`;
     paket.appendChild(opt);
   });
@@ -43,6 +45,7 @@ document.getElementById("game").addEventListener("change", function () {
   document.getElementById("serverLabel").innerText =
     this.value === "Roblox" ? "Display Name" : "Server";
 });
+
 
 /* KIRIM WA */
 
