@@ -2,8 +2,8 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
+  <title>Gachain.Aja</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gachain.Aja - Top Up Game</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,46 +13,52 @@
   <p>Top Up Game Murah • Cepat • Aman</p>
 </header>
 
+<!-- SLIDER -->
 <div class="slider">
-  <img src="img/banner1.jpg" class="active">
-  <img src="img/banner2.jpg">
-  <img src="img/banner3.jpg">
+  <img src="img/ff.jpg" class="active">
+  <img src="img/ml.jpg">
+  <img src="img/pubg.jpg">
   <img src="img/roblox.jpg">
 
   <div class="slider-overlay">
-    <h2>Top Up Game Murah</h2>
-    <p>Proses Cepat • Aman • Terpercaya</p>
+    <h2>Top Up Game Favoritmu</h2>
+    <p>Proses otomatis & terpercaya</p>
   </div>
 </div>
 
-
-<!-- CARD FORM -->
+<!-- FORM -->
 <div class="card">
-  <h2>Form Top Up</h2>
+  <h3>Form Top Up</h3>
 
   <label>Pilih Game</label>
   <select id="game">
     <option value="">-- Pilih Game --</option>
     <option value="Free Fire">Free Fire</option>
-    <option value="Mobile Legends">Mobile Legends</option>
-    <option value="PUBG Mobile">PUBG Mobile</option>
+    <option value="Mobile Legend">Mobile Legend</option>
+    <option value="PUBG">PUBG</option>
     <option value="Roblox">Roblox</option>
   </select>
 
   <label>User ID</label>
-  <input type="text" id="userid" placeholder="Masukkan User ID">
+  <input type="text" id="gameId" placeholder="Masukkan User ID">
 
-  <label>Server / Display Name</label>
+  <label id="serverLabel">Server / Display Name</label>
   <input type="text" id="server" placeholder="Server (Roblox: Display Name)">
 
   <label>Pilih Paket</label>
-  <div class="paket-grid" id="paketContainer">
-    <p class="hint">Pilih game terlebih dahulu</p>
-  </div>
+  <select id="nominal">
+    <option>Pilih game terlebih dahulu</option>
+  </select>
 
-  <button class="btn-order" onclick="pesanSekarang()">
-    Pesan via WhatsApp
-  </button>
+  <label>Metode Pembayaran</label>
+  <select id="payment">
+    <option>DANA</option>
+    <option>OVO</option>
+    <option>GOPAY</option>
+    <option>QRIS</option>
+  </select>
+
+  <button class="btn-wa" onclick="kirimWA()">Pesan via WhatsApp</button>
 </div>
 
 <script src="script.js"></script>
