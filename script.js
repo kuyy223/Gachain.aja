@@ -50,6 +50,7 @@ document.getElementById("game").addEventListener("change", function () {
 });
 
 /* ========== KIRIM WHATSAPP ========== */
+
 function kirimWA() {
   const game = document.getElementById("game").value;
   const id = document.getElementById("gameId").value;
@@ -62,8 +63,8 @@ function kirimWA() {
     return;
   }
 
-  const pesan = `
-🔥 *TOP UP GAME BARU* 🔥
+  const pesan =
+`🔥 *TOP UP GAME BARU* 🔥
 
 🎮 Game: ${game}
 🆔 ID: ${id}
@@ -72,12 +73,13 @@ function kirimWA() {
 📦 Paket: ${paket}
 💳 Pembayaran: ${payment}
 
-Mohon kirimkan instruksi pembayaran 🙏
-`;
+Mohon kirimkan instruksi pembayaran 🙏`;
 
-  const nomorAdmin = "6283142808857"; // GANTI NOMOR KAMU
-  location.herf = `https://wa.me/${nomorAdmin}?text=${encodeURIComponent(pesan)}`;
+  const nomorAdmin = "6283142808857"; // GANTI DENGAN NOMOR WA KAMU
 
-  window.open(url, "_blank");
+  location.href =
+    "https://wa.me/" +
+    nomorAdmin +
+    "?text=" +
+    encodeURIComponent(pesan);
 }
-
