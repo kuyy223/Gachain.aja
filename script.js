@@ -61,7 +61,7 @@ Paket: ${paket}
 Pembayaran: ${pay}
   `;
 
-  const wa = "628xxxxxxxxx"; // GANTI NOMOR KAMU
+  const wa = "6283142808857"; // GANTI NOMOR KAMU
   window.open(`https://wa.me/${wa}?text=${encodeURIComponent(text)}`);
 }
 
