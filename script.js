@@ -1,14 +1,17 @@
-/* SLIDER */
+/* ========== SLIDER ========== */
 let slides = document.querySelectorAll(".slider img");
 let index = 0;
 
-setInterval(() => {
-  slides[index].classList.remove("active");
-  index = (index + 1) % slides.length;
-  slides[index].classList.add("active");
-}, 3000);
+if (slides.length > 0) {
+  slides[0].classList.add("active");
+  setInterval(() => {
+    slides[index].classList.remove("active");
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+  }, 3000);
+}
 
-/* DATA PAKET */
+/* ========== DATA PAKET GAME ========== */
 const paketGame = {
   "Free Fire": [
     { nama: "70 Diamond", harga: 10000 },
@@ -28,10 +31,10 @@ const paketGame = {
   ]
 };
 
-/* CHANGE GAME */
+/* ========== CHANGE GAME ========== */
 document.getElementById("game").addEventListener("change", function () {
   const paket = document.getElementById("nominal");
-  paket.innerHTML = "";
+  paket.innerHTML = '<option value="">-- Pilih Paket --</option>';
 
   if (!paketGame[this.value]) return;
 
@@ -46,29 +49,35 @@ document.getElementById("game").addEventListener("change", function () {
     this.value === "Roblox" ? "Display Name" : "Server";
 });
 
-
-/* KIRIM WA */
-
+/* ========== KIRIM WHATSAPP ========== */
 function kirimWA() {
   const game = document.getElementById("game").value;
   const id = document.getElementById("gameId").value;
   const server = document.getElementById("server").value;
   const paket = document.getElementById("nominal").value;
-  const pay = document.getElementById("payment").value;
+  const payment = document.getElementById("payment").value;
 
-  if (!game || !id || !paket) {
-    alert("Lengkapi data terlebih dahulu!");
+  if (!game || !id || !paket || !payment) {
+    alert("Mohon lengkapi semua data!");
     return;
   }
 
-  const text = `Silahkan masukan data anda di form TOP UP GAME dibawah ini
-Game: ${game}
-ID: ${id}
-Server: ${server}
-Paket: ${paket}
-Pembayaran: ${pay}`;
+  const pesan = `
+🔥 *TOP UP GAME BARU* 🔥
 
-  const wa = "6283142808857"; // nomor kamu SUDAH BENAR
-  location.href = `https://wa.me/${wa}?text=${encodeURIComponent(text)}`;
+🎮 Game: ${game}
+🆔 ID: ${id}
+📌 ${game === "Roblox" ? "Display Name" : "Server"}: ${server || "-"}
+
+📦 Paket: ${paket}
+💳 Pembayaran: ${payment}
+
+Mohon kirimkan instruksi pembayaran 🙏
+`;
+
+  const nomorAdmin = "628XXXXXXXXXX"; // GANTI NOMOR KAMU
+  const url = `https://wa.me/${nomorAdmin}?text=${encodeURIComponent(pesan)}`;
+
+  window.open(url, "_blank");
 }
 
