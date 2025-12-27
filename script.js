@@ -45,6 +45,7 @@ document.getElementById("game").addEventListener("change", function () {
 });
 
 /* KIRIM WA */
+
 function kirimWA() {
   const game = document.getElementById("game").value;
   const id = document.getElementById("gameId").value;
@@ -52,16 +53,19 @@ function kirimWA() {
   const paket = document.getElementById("nominal").value;
   const pay = document.getElementById("payment").value;
 
-  const text = `
-TOP UP GAME
+  if (!game || !id || !paket) {
+    alert("Lengkapi data terlebih dahulu!");
+    return;
+  }
+
+  const text = `TOP UP GAME
 Game: ${game}
 ID: ${id}
 Server: ${server}
 Paket: ${paket}
-Pembayaran: ${pay}
-  `;
+Pembayaran: ${pay}`;
 
-  const wa = "6283142808857"; // GANTI NOMOR KAMU
-  window.open(`https://wa.me/${wa}?text=${encodeURIComponent(text)}`);
+  const wa = "6283142808857"; // nomor kamu SUDAH BENAR
+  location.href = `https://wa.me/${wa}?text=${encodeURIComponent(text)}`;
 }
 
