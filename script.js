@@ -1,8 +1,18 @@
+/* SLIDER */
+let slides = document.querySelectorAll(".slider img");
+let index = 0;
+
+setInterval(() => {
+  slides[index].classList.remove("active");
+  index = (index + 1) % slides.length;
+  slides[index].classList.add("active");
+}, 3000);
+
+/* DATA PAKET */
 const paketGame = {
   "Free Fire": [
     { nama: "70 Diamond", harga: 10000 },
-    { nama: "140 Diamond", harga: 19000 },
-    { nama: "355 Diamond", harga: 48000 }
+    { nama: "140 Diamond", harga: 19000 }
   ],
   "Mobile Legend": [
     { nama: "86 Diamond", harga: 20000 },
@@ -18,53 +28,40 @@ const paketGame = {
   ]
 };
 
+/* CHANGE GAME */
 document.getElementById("game").addEventListener("change", function () {
-  const paketSelect = document.getElementById("nominal");
-  paketSelect.innerHTML = "";
+  const paket = document.getElementById("nominal");
+  paket.innerHTML = "";
 
   paketGame[this.value]?.forEach(p => {
-    const opt = document.createElement("option");
+    let opt = document.createElement("option");
     opt.value = p.nama + " - Rp " + p.harga;
-    opt.textContent = p.nama + " (Rp " + p.harga.toLocaleString() + ")";
-    paketSelect.appendChild(opt);
+    opt.textContent = `${p.nama} (Rp ${p.harga.toLocaleString()})`;
+    paket.appendChild(opt);
   });
+
+  document.getElementById("serverLabel").innerText =
+    this.value === "Roblox" ? "Display Name" : "Server";
 });
 
-
-function pesanSekarang() {
-  const game = gameSelect.value;
-  const userid = document.getElementById("userid").value;
+/* KIRIM WA */
+function kirimWA() {
+  const game = document.getElementById("game").value;
+  const id = document.getElementById("gameId").value;
   const server = document.getElementById("server").value;
-  const paket = document.querySelector('input[name="paket"]:checked');
+  const paket = document.getElementById("nominal").value;
+  const pay = document.getElementById("payment").value;
 
-  if (!game || !userid || !paket) {
-    alert("Mohon lengkapi data terlebih dahulu");
-    return;
-  }
+  const text = `
+TOP UP GAME
+Game: ${game}
+ID: ${id}
+Server: ${server}
+Paket: ${paket}
+Pembayaran: ${pay}
+  `;
 
-  const pesan = `
-Halo Admin 👋
-Saya ingin top up:
-
-🎮 Game: ${game}
-🆔 User ID: ${userid}
-🌐 Server / Display Name: ${server || "-"}
-💎 Paket: ${paket.value}
-
-Terima kasih 🙏
-`;
-
-  const nomorAdmin = "6283142808857"; // GANTI
-  window.open(`https://wa.me/${nomorAdmin}?text=${encodeURIComponent(pesan)}`, "_blank");
+  const wa = "628xxxxxxxxx"; // GANTI NOMOR KAMU
+  window.open(`https://wa.me/${wa}?text=${encodeURIComponent(text)}`);
 }
-
-/* SLIDER */
-let slideIndex = 0;
-const slides = document.querySelectorAll(".slider img");
-
-setInterval(() => {
-  slides[slideIndex].classList.remove("active");
-  slideIndex = (slideIndex + 1) % slides.length;
-  slides[slideIndex].classList.add("active");
-}, 3000);
 
