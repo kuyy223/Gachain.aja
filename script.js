@@ -75,7 +75,7 @@ function kirimWA() {
 Mohon kirimkan instruksi pembayaran 🙏
 `;
 
-  const nomorAdmin = "628XXXXXXXXXX"; // GANTI NOMOR KAMU
+  const nomorAdmin = "6283142808857"; // GANTI NOMOR KAMU
   const url = `https://wa.me/${nomorAdmin}?text=${encodeURIComponent(pesan)}`;
 
   window.open(url, "_blank");
