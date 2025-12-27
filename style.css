@@ -103,4 +103,28 @@ input, select {
     height: 150px;
   }
 }
+button {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(90deg, #25D366, #1ebe57);
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.slider img {
+  display: none;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.slider img.active {
+  display: block;
+}
 
