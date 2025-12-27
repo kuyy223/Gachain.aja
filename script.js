@@ -61,7 +61,7 @@ function kirimWA() {
     return;
   }
 
-  const text = `TOP UP GAME
+  const text = `Silahkan masukan data anda di form TOP UP GAME dibawah ini
 Game: ${game}
 ID: ${id}
 Server: ${server}
