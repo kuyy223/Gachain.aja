@@ -63,23 +63,24 @@ function kirimWA() {
     return;
   }
 
-  const pesan =
-`🔥 *TOP UP GAME BARU* 🔥
+  const pesan = `🔥 TOP UP GAME BARU 🔥
 
 🎮 Game: ${game}
 🆔 ID: ${id}
-📌 ${game === "Roblox" ? "Display Name" : "Server"}: ${server || "-"}
+${game === "Roblox" ? "👤 Display Name" : "🌐 Server"}: ${server || "-"}
 
 📦 Paket: ${paket}
 💳 Pembayaran: ${payment}
 
 Mohon kirimkan instruksi pembayaran 🙏`;
 
-  const nomorAdmin = "6283142808857"; // GANTI DENGAN NOMOR WA KAMU
+  const nomorAdmin = "6283142808857"; // TANPA +
 
+  // WA PALING STABIL
   location.href =
-    "https://wa.me/" +
+    "https://api.whatsapp.com/send?phone=" +
     nomorAdmin +
-    "?text=" +
+    "&text=" +
     encodeURIComponent(pesan);
 }
+
